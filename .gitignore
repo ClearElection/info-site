@@ -13,4 +13,9 @@
 # Ignore Sass' cache
 /.sass-cache
 
+# Ignore bower cache
 /bower_components
+
+# Ignore keys (but keep directory)
+/keys/*
+!.gitkeep
