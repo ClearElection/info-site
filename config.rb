@@ -59,6 +59,10 @@ set :images_dir, 'images'
 
 activate :bower
 
+configure :development do
+  set :debug_assets, true
+end
+
 # Build-specific configuration
 configure :build do
   ignore 'images/*.psd'
@@ -66,6 +70,8 @@ configure :build do
   ignore 'stylesheets/vendor/*'
   ignore 'javascripts/lib/*'
   ignore 'javascripts/vendor/*'
+
+  activate :asset_hash
 
   # For example, change the Compass output style for deployment
   activate :minify_css
