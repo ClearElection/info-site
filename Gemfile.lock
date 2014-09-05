@@ -62,6 +62,10 @@ GEM
     formatador (0.2.5)
     haml (4.0.5)
       tilt
+    haml_coffee_assets (1.16.0)
+      coffee-script (~> 2.0)
+      sprockets (~> 2.0)
+      tilt (~> 1.1)
     hike (1.2.3)
     hitimes (1.2.2)
     hooks (0.4.0)
@@ -186,6 +190,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  haml_coffee_assets
   middleman (~> 3.3)
   middleman-bower
   middleman-jasmine
