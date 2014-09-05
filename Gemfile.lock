@@ -59,6 +59,8 @@ GEM
     fog-softlayer (0.3.16)
       fog-core
       fog-json
+    font-awesome-middleman (4.1.1)
+      middleman-core (>= 3.0.0)
     formatador (0.2.5)
     haml (4.0.5)
       tilt
@@ -190,6 +192,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  font-awesome-middleman
   haml_coffee_assets
   middleman (~> 3.3)
   middleman-bower
