@@ -1,0 +1,103 @@
+body {
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+header {
+    background:url("Clear_Sky.jpg");
+    background-repeat: repeat-x;
+    width: 100%;
+    height: 464px;
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+    padding-top: 20px;
+}
+header > .contents {
+    display: inline-block;
+    width: 1000px;
+    height: 100%;
+    position: relative;
+    color: white;
+    text-shadow: 1px 1px 1px rgb(2,33,183);
+}
+header .check {
+    position: absolute;
+    left: 34%;
+    background:url("checkmark-blue.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height:100px;
+    width:100px;
+}
+header .title {
+    font-size: 44px;
+    white-space: nowrap;
+    margin-top: 30px;
+    position: relative;
+}
+header .subtitle {
+    font-size: 24px;
+    white-space: nowrap;
+    margin-top: 20px;
+}
+header #slogans {
+    margin-top: 40px;
+    font-size: 20px;
+    display: block;
+    text-align: center;
+}
+
+header #slogans > div {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.opendata-logo {
+    display: inline-block;
+    background:url("Open_Data.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 120px;
+    height: 30px;
+}
+
+nav {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 20px;
+}
+
+nav a {
+    margin: 30px;
+}
+
+#MainContents {
+    width: 1000px;
+    text-align: left;
+    color: darkblue;
+}
+
+h1 {
+    text-align: center;
+}
+
+article{
+    padding-left: 20px;
+}
+
+.quote {
+    text-align: center;
+    color: crimson;
+    font-style: italic;
+}
+
+.idea {
+    color: crimson;
+    font-style: italic;
+}
