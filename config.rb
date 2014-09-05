@@ -77,11 +77,11 @@ end
 
 # Build-specific configuration
 configure :build do
-  ignore 'images/*.psd'
-  ignore 'stylesheets/lib/*'
-  ignore 'stylesheets/vendor/*'
-  ignore 'javascripts/lib/*'
-  ignore 'javascripts/vendor/*'
+  #ignore 'images/*.psd'
+  #ignore 'stylesheets/lib/*'
+  #ignore 'stylesheets/vendor/*'
+  #ignore 'javascripts/lib/*'
+  #ignore 'javascripts/vendor/*'
 
   activate :asset_hash
 
