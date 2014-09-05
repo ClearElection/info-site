@@ -63,6 +63,10 @@ configure :development do
   set :debug_assets, true
 end
 
+activate :jasmine do |options|
+  options.debug_assets = true
+end
+
 # Build-specific configuration
 configure :build do
   ignore 'images/*.psd'
