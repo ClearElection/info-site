@@ -67,6 +67,14 @@ activate :jasmine do |options|
   options.debug_assets = true
 end
 
+activate :s3_sync do |s3_sync|
+  keys = YAML.load_file("keys/aws.yml").deep_symbolize_keys
+  s3_sync.bucket                 = 'bucketname-goes-here'
+  s3_sync.region                 = keys[:region]
+  s3_sync.aws_access_key_id      = keys[:aws_access_key_id]
+  s3_sync.aws_secret_access_key  = keys[:aws_secret_access_key]
+end
+
 # Build-specific configuration
 configure :build do
   ignore 'images/*.psd'
