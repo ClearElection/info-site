@@ -33,13 +33,15 @@
 
     -# Stylesheets
     = stylesheet_link_tag 'application'
-  %body{class: current_page.data.body_class || 'page'}
-    = yield
+
     -# Javascripts
     = javascript_include_tag 'application'
     :javascript
       window.Middleman = { Data: {} };
       window.Middleman.Data.Defaults = #{JSON.generate(data.defaults)};
+
+  %body{class: current_page.data.body_class || 'page'}
+    = yield
 
     - if build?
       -# Google Analytics
