@@ -6,3 +6,4 @@
 #= require string
 #= require_tree ./templates
 #= require_tree ./lib
+#= require ./main

@@ -1,0 +1,25 @@
+%h1 Who counts the votes?
+%article
+  %p
+    You may know this famous quote, apocryphally attributed to Joseph Stalin:
+    .quote Those who vote decide nothing.  Those who count the vote decide everything.
+    Cynical, but essentially true.  
+    %aside
+      %p
+        In a typical elections today, counting the vote is a strangely
+        obscure process.  It happens behind closed doors.  Perhaps there
+        are observers, perhaps there are auditors.  But if somebody cries
+        "foul", there's no way for anyone outside the doors to really
+        be ertain there were no errors or fraud. 
+      %p
+        Instead, there are drawn-out arguments, legal battles, and acrimony, and the
+        losing side feels like they were cheated.
+  %p
+    Fortunately, there's an easy solution using Open Data:  Make the
+    ballot data open to anybody.  Then those who vote can also be those
+    who count the vote.   Then <em>anybody</em> who wants to can count
+    the vote of any election.
+    %aside
+      Actually, you'd probably use a computer to tally the ballots
+      in the data set.  Computers are good at counting!
+
