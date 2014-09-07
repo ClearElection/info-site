@@ -1,0 +1,63 @@
+$header-height: 320px;
+
+#Header {
+  width: 100%;
+  height: $header-height;
+  box-sizing: border-box;
+  position: relative;
+  text-align: center;
+  padding-top: 20px;
+  > .contents {
+    display: inline-block;
+    width: 800px;
+    height: 100%;
+    position: relative;
+    color: white;
+    text-shadow: 1px 1px 1px rgb(2,33,183);
+  }
+  .check {
+    position: absolute;
+    left: 34%;
+    background:url("checkmark-blue.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height:100px;
+    width:100px;
+  }
+  .title {
+    font-size: 44px;
+    white-space: nowrap;
+    margin-top: 30px;
+    position: relative;
+  }
+  .subtitle {
+    font-size: 24px;
+    white-space: nowrap;
+    margin-top: 20px;
+  }
+  #slogans {
+    margin-top: 40px;
+    font-size: 20px;
+    display: block;
+    text-align: center;
+
+    > div {
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+  }
+}
+
+#HeaderTopBar {
+  color: white;
+  text-shadow: 1px 1px 1px rgb(2,33,183);
+  a {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  .top-bar {
+    background:url("Clear_Sky.png");
+    background-position-x: 0;
+    background-position-y: -$header-height;
+  }
+}
