@@ -9,8 +9,10 @@ $(document).ready ->
         $sections.hide()
         $buttons.removeClass("active")
         $button.addClass("active")
-        $($button.attr("href")).show()
+        hashid = $button.attr("href")
+        $(hashid).show()
         $button.append $downarrows
+        window.location.hash = hashid
         return false
 
     $cur = $buttons.filter("[href='#{window.location.hash}']")
