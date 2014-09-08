@@ -2,15 +2,6 @@ $(document).ready ->
 
     $(document).foundation()
     $sections = $("#MainContents > section")
-    $sections.each ->
-        $section = $(@)
-        sectionID = $section.attr("id")
-        template = JST[sectionID]
-        if template
-            $section.html template()
-        else
-            $section.html "No template for section #{sectionID}"
-
     $buttons = $("#HeaderTopBar .button")
     $downarrows = $(".tab-down-arrow")
 

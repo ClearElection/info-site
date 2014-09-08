@@ -13,19 +13,19 @@
         .tables
           .returns-table.voter-roll
             %table
-              %caption= "#{Data.Names.length} voters participated"
+              %caption= "#{data.names.length} voters participated"
               %thead
                 %tr
                   %th.number{scope:"column"} #
                   %th{scope:"column"} Voter
               %tbody
-                - _.each Data.Names, (name, i) ->
+                - data.names.each_with_index do |name, i|
                   %tr
                     %td.number= i+1
                     %td= name
           .returns-table.ballots
             %table
-              %caption= "#{Data.Ballots.length} ballots cast"
+              %caption= "#{data.ballots.length} ballots cast"
               %thead
                 %tr
                   %th.number{scope:"column"} #
@@ -33,12 +33,12 @@
                   %th.candidate{scope:"column"} President
                   %th.proposition{scope:"column"} Prop. A
               %tbody
-                - _.each Data.Ballots, (ballot, i) ->
+                - data.ballots.each_with_index do |ballot, i|
                   %tr
                     %td.number= i+1
-                    %td.ballot-id= ballot.ballot_id
-                    %td.candidate= ballot.candidate
-                    %td.proposition= ballot.proposition
+                    %td.ballot-id= ballot["ballot_id"]
+                    %td.candidate= ballot["candidate"]
+                    %td.proposition= ballot["proposition"]
         .uncorrelated
           .uparrow.left-side
           Secret Ballots: These tables aren't in the same order!
