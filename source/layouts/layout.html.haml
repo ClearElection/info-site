@@ -37,8 +37,9 @@
     -# Javascripts
     = javascript_include_tag 'application'
     :javascript
-      window.Middleman = { Data: {} };
-      window.Middleman.Data.Defaults = #{JSON.generate(data.defaults)};
+      window.Data = { };
+      window.Data.Names = #{JSON.generate(data.names)};
+      window.Data.Ballots = #{JSON.generate(data.ballots)};
 
   %body{class: current_page.data.body_class || 'page'}
     = yield

@@ -1,0 +1,106 @@
+%section
+
+  %h1 In a Clear Election, the returns data are freely available on the web.
+
+  %article
+
+    .returns
+      .contents
+        .caption Sample Election Returns
+        %a.download
+          %i.fa.fa-download
+          Download 
+        .tables
+          .returns-table.voter-roll
+            %table
+              %caption= "#{Data.Names.length} voters participated"
+              %thead
+                %tr
+                  %th.number{scope:"column"} #
+                  %th{scope:"column"} Voter
+              %tbody
+                - _.each Data.Names, (name, i) ->
+                  %tr
+                    %td.number= i+1
+                    %td= name
+          .returns-table.ballots
+            %table
+              %caption= "#{Data.Ballots.length} ballots cast"
+              %thead
+                %tr
+                  %th.number{scope:"column"} #
+                  %th.ballot-id{scope:"column"} Ballot ID
+                  %th.candidate{scope:"column"} President
+                  %th.proposition{scope:"column"} Prop. A
+              %tbody
+                - _.each Data.Ballots, (ballot, i) ->
+                  %tr
+                    %td.number= i+1
+                    %td.ballot-id= ballot.ballot_id
+                    %td.candidate= ballot.candidate
+                    %td.proposition= ballot.proposition
+        .uncorrelated
+          .uparrow.left-side
+          Secret Ballots: These tables aren't in the same order!
+          .uparrow.right-side
+
+    .p
+      You may know this famous quote, apocryphally attributed to Joseph Stalin:
+      .quote
+        "Those who vote decide nothing.  Those who count the vote decide everything."
+      In a Clear Election, anyone and everyone can count the votes, and confirm the results.
+
+%section
+
+  %h1 In a Clear Election, you confirm that your vote was counted.
+
+  %article
+
+    .p
+      In a typical election today, you cast your vote and then... somebody tells you who won.  But how can you be sure your vote was really counted?
+
+    .p
+      In a Clear Election, every ballot has a "Ballot ID".  When you fill out your ballot, you get to keep a copy of your ballot ID.  Only you know your ballot ID.  Keep it confidential.
+
+    .TODO sample ballot goes here
+
+%section
+
+  %h1 In a Clear Election, nobody can "stuff ballots"
+
+  %article
+
+    .TODO you can tell if there are more ballots than voters
+
+    .TODO you know who all the (alleged) voters are, can check if they're legit
+
+
+%section
+
+  %h1 In a Clear Election, the results speak for themselves
+
+  %article
+
+    .TODO It's all about data quality.
+
+    .TODO The technology doesn't matter, as long as the final data
+
+
+%section
+
+  %h1 In a Clear Election, nobody can steal the election
+
+  %article
+
+    .TODO As long as voters check their ballots and as long as interested parties verify the voter roll, it's guaranteed that the resul
+
+%section
+
+  %h1 Can anything go wrong?
+
+  %article
+
+    .TODO yes of course, nothing's perfect.
+    .TODO somebody could *disrupt* the election by messing with the data.  it would be evident when people check the data that it's bad.  so the election data might need to be thrown out.  so there's a risk of getting *no* results.  but no risk of getting the *wrong* results.
+
+    .TODO as always, care needs to be taken to maintain voter secrecy and privacy.

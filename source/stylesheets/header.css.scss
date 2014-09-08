@@ -1,4 +1,8 @@
-$header-height: 320px;
+@import 'compass/css3';
+
+$header-height: 640px;
+$checkmark-color: rgb(9,42,180);
+$down-arrow-size: 48px;
 
 #Header {
   width: 100%;
@@ -6,7 +10,6 @@ $header-height: 320px;
   box-sizing: border-box;
   position: relative;
   text-align: center;
-  padding-top: 20px;
   > .contents {
     display: inline-block;
     width: 800px;
@@ -15,8 +18,14 @@ $header-height: 320px;
     color: white;
     text-shadow: 1px 1px 1px rgb(2,33,183);
   }
+  .banner {
+    position: relative;
+    width: 100%;
+    margin-top: 120px;
+  }
   .check {
     position: absolute;
+    top: -30px;
     left: 34%;
     background:url("checkmark-blue.png");
     background-size: contain;
@@ -34,9 +43,10 @@ $header-height: 320px;
     font-size: 24px;
     white-space: nowrap;
     margin-top: 20px;
+    position: relative;
   }
   #slogans {
-    margin-top: 40px;
+    margin-top: 140px;
     font-size: 20px;
     display: block;
     text-align: center;
@@ -51,13 +61,43 @@ $header-height: 320px;
 #HeaderTopBar {
   color: white;
   text-shadow: 1px 1px 1px rgb(2,33,183);
-  a {
+  white-space: nowrap;
+  .button {
+    top: 0; // foundation override
     margin-left: 30px;
     margin-right: 30px;
+    background:0.65*$checkmark-color + 0.35*rgb(255,255,255); 
+    position: relative;
+    &.active {
+      background: 0.75*$checkmark-color + 0.25*rgb(255,255,255);
+      @include box-shadow (0 0 8px white);
+    }
+    &:hover {
+      @include box-shadow (0 0 8px white);
+    }
   }
   .top-bar {
     background:url("Clear_Sky.png");
     background-position-x: 0;
     background-position-y: -$header-height;
+    height: 64px;
+    position: relative;
+    .tab-down-arrow {
+      background: url("white-arrow-down-right.png");
+      background-size: $down-arrow-size $down-arrow-size;
+      position: absolute;
+      width: $down-arrow-size;
+      height: $down-arrow-size;
+      top: 50%;
+      margin-top: -6px;
+      @include box-shadow(none);
+      &.right-side {
+        right: 2-$down-arrow-size;
+      }
+      &.left-side {
+        left: 2-$down-arrow-size;
+        @include scaleX(-1);
+      }
+    }
   }
 }

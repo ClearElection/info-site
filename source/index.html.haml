@@ -1,12 +1,13 @@
 ---
 title: Clear Elections
-body_class: index
+body_class: what
 ---
 #Header
   .contents
-    .check
-    .title Clear Elections
-    .subtitle The clear way to run elections
+    .banner
+      .check
+      .title Clear Elections
+      .subtitle The clear way to run elections
     %section#slogans
       %div Simple.
       %div Verifiable.
@@ -16,13 +17,15 @@ body_class: index
       //%div Impossible to rig
 #HeaderTopBar.sticky
   %nav.top-bar{data: {topbar: true},role: 'navigation'}
-    %a How does it work?
-    %a Why can't it be rigged?
-    %a What's the catch?
+    %a.button.round{href: "#what"} What's a Clear Election?
+    %a.button.round{href: "#hold"} How can I hold a Clear Election?
+    %a.button.round{href: "#technical"} Technical Details
+    %a.button.round{href: "#faq"} FAQ
+    .tab-down-arrow.right-side
+    .tab-down-arrow.left-side
+
 #MainContents
-  %section#who-counts
-  %section#how-does-it-work
-  %section#how-does-it-work2
-  %section#how-does-it-work3
-  %section#how-does-it-work4
-  %section#how-does-it-work5
+  %section#what
+  %section#hold
+  %section#technical
+  %section#faq

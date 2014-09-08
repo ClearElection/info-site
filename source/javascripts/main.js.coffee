@@ -1,8 +1,27 @@
 $(document).ready ->
+
     $(document).foundation()
-    $("#who-counts").html JST["who_counts"]()
-    $("#how-does-it-work").html JST["how_does_it_work"]()
-    $("#how-does-it-work2").html JST["how_does_it_work"]()
-    $("#how-does-it-work3").html JST["how_does_it_work"]()
-    $("#how-does-it-work4").html JST["how_does_it_work"]()
-    $("#how-does-it-work5").html JST["how_does_it_work"]()
+    $sections = $("#MainContents > section")
+    $sections.each ->
+        $section = $(@)
+        sectionID = $section.attr("id")
+        template = JST[sectionID]
+        if template
+            $section.html template()
+        else
+            $section.html "No template for section #{sectionID}"
+
+    $buttons = $("#HeaderTopBar .button")
+    $downarrows = $(".tab-down-arrow")
+
+    activate = ($button) ->
+        $sections.hide()
+        $buttons.removeClass("active")
+        $button.addClass("active")
+        $($button.attr("href")).show()
+        $button.append $downarrows
+
+    $cur = $buttons.filter("[href='#{window.location.hash}']")
+    activate if $cur.size == 0 then $buttons.first() else $cur
+
+    $buttons.on "click", -> activate $(@)
