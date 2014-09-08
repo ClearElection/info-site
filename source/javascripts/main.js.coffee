@@ -20,8 +20,9 @@ $(document).ready ->
         $button.addClass("active")
         $($button.attr("href")).show()
         $button.append $downarrows
+        return false
 
     $cur = $buttons.filter("[href='#{window.location.hash}']")
-    activate if $cur.size == 0 then $buttons.first() else $cur
+    activate if $cur.length == 0 then $buttons.first() else $cur
 
     $buttons.on "click", -> activate $(@)

@@ -48,8 +48,10 @@
       color: grey;
       font-style: italic;
       &:before {
-        content: "TODO ";
+        content: "TODO -- ";
       }
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
 
 

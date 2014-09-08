@@ -64,6 +64,8 @@
 
     .TODO sample ballot goes here
 
+    .TODO Include ballot uniquification if that can be clear.
+
 %section
 
   %h1 In a Clear Election, nobody can "stuff ballots"
