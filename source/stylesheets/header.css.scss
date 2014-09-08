@@ -27,7 +27,7 @@ $down-arrow-size: 32px;
     position: absolute;
     top: -30px;
     left: 34%;
-    background:url("checkmark-blue.png");
+    background:url("/images/checkmark-blue.png");
     background-size: contain;
     background-repeat: no-repeat;
     height:100px;
@@ -77,13 +77,13 @@ $down-arrow-size: 32px;
     }
   }
   .top-bar {
-    background:url("Clear_Sky.jpg");
+    background:url("/images/Clear_Sky.jpg");
     background-position-x: 0;
     background-position-y: -$header-height;
     height: 18+$down-arrow-size;
     position: relative;
     .tab-down-arrow {
-      background: url("white-arrow-down-right.png");
+      background: url("/images/white-arrow-down-right.png");
       background-size: $down-arrow-size $down-arrow-size;
       position: absolute;
       width: $down-arrow-size;
@@ -101,7 +101,7 @@ $down-arrow-size: 32px;
     }
   }
   .logo {
-      background:url("checkmark-blue.png");
+      background:url("/images/checkmark-blue.png");
       width: 32px;
       height: 32px;
       background-size: 100% 100%;
