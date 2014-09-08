@@ -2,7 +2,7 @@
 
 $header-height: 640px;
 $checkmark-color: rgb(9,42,180);
-$down-arrow-size: 48px;
+$down-arrow-size: 32px;
 
 #Header {
   width: 100%;
@@ -77,10 +77,10 @@ $down-arrow-size: 48px;
     }
   }
   .top-bar {
-    background:url("Clear_Sky.png");
+    background:url("Clear_Sky.jpg");
     background-position-x: 0;
     background-position-y: -$header-height;
-    height: 64px;
+    height: 18+$down-arrow-size;
     position: relative;
     .tab-down-arrow {
       background: url("white-arrow-down-right.png");
@@ -99,5 +99,19 @@ $down-arrow-size: 48px;
         @include scaleX(-1);
       }
     }
+  }
+  .logo {
+      background:url("checkmark-blue.png");
+      width: 32px;
+      height: 32px;
+      background-size: 100% 100%;
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      cursor: pointer;
+      display: none;
+  }
+  &.fixed .logo {
+      display: block;
   }
 }
