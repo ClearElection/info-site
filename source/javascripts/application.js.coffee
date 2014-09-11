@@ -4,6 +4,7 @@
 #= require hamlcoffee
 #= require modernizr/modernizr
 #= require string
+#= require ./namespace
 #= require_tree ./templates
 #= require_tree ./lib
-#= require ./main
+#= require_tree .

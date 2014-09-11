@@ -1,0 +1,109 @@
+@import 'compass/css3';
+
+$up_arrow_size: 16px;
+$comment_color: rgba(0,128,0,0.85);
+
+.sample.returns {
+  .uncorrelated {
+    position: absolute;
+    white-space: nowrap;
+    left: 160px;
+    bottom: 4px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-style: italic;
+    font-size: smaller;
+    color: $comment_color;
+    .uparrow {
+      display: inline-block;
+      background: url("/images/green-arrow-down-right.png");
+      background-size: $up_arrow_size $up_arrow_size;
+      width: $up_arrow_size;
+      height: $up_arrow_size;
+      @include scaleY(-1);
+      &.left-side {
+        @include scale(-1, -1);
+      }
+
+    }
+  }
+  .download {
+    font-weight: bold;
+    font-size: smaller;
+    color: black;
+    float: right;
+    position: absolute;
+    top: 4px;
+    right: 8px;
+  }
+  aside {
+    display: block;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-style: italic;
+    font-size: smaller;
+    position: absolute;
+    color: $comment_color;
+    width: 280px;
+    left: -294px;
+    top: 28px;
+    @include rotate(-7deg);
+    display: block;
+    .downarrow {
+      display: inline-block;
+      position: absolute;
+      right: -$up_arrow_size/2;
+      top: 50%;
+      margin-top: -$up_arrow_size/2;
+      background: url("/images/green-arrow-down-right.png");
+      background-size: $up_arrow_size $up_arrow_size;
+      width: $up_arrow_size;
+      height: $up_arrow_size;
+      @include rotate(-45deg);
+    }
+
+  }
+  .tables: {
+    white-space: nobreak;
+  }
+  .returns-table {
+    display: inline-block;
+    margin:8px;
+    &.voter-roll {
+      width: 300px;
+    }
+    &.ballots {
+      width: 400px;
+    }
+    table {
+      margin: 0;
+      display: table;
+      width: 100%;
+      line-height: 1;
+      caption {
+        margin-bottom: 4px;
+      }
+      thead, tbody {
+        float: left;
+        width: 100%;
+      }
+      tbody {
+        overflow: auto;
+        height: 200px;
+      }
+      tr {
+        width: 100%;
+        display: table;
+        text-align: left;
+      }
+      th,td {
+        &.number { width: 40px; }
+        &.ballot-id { width: 110px; max-width: 150px;}
+        &.proposition { width: 80px; }
+      }
+      td.ballot-id {
+        font-family: monospace, monospace;
+      }
+
+
+    }
+  }
+}

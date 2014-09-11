@@ -1,0 +1,44 @@
+.sample.returns
+  .caption Sample Election Returns Website
+  .contents
+    %a.download
+      %i.fa.fa-download
+      Download 
+    .tables
+      .returns-table.voter-roll
+        %table
+          %caption= "#{data.names.length} voters participated"
+          %thead
+            %tr
+              %th.number{scope:"column"} #
+              %th{scope:"column"} Voter
+          %tbody
+            - data.names.each_with_index do |name, i|
+              %tr
+                %td.number= "#{i+1}."
+                %td= name
+      .returns-table.ballots
+        %table
+          %caption= "#{data.ballots.length} ballots cast"
+          %thead
+            %tr
+              %th.number{scope:"column"} #
+              %th.ballot-id{scope:"column"} Ballot ID
+              %th.candidate{scope:"column"} President
+              %th.proposition{scope:"column"} Prop. A
+          %tbody
+            - data.ballots.each_with_index do |ballot, i|
+              %tr
+                %td.number= "#{i+1}."
+                %td.ballot-id= ballot["ballot_id"]+"&bullet;"+ballot["uniquifier"]
+                %td.candidate= ballot["candidate"]
+                %td.proposition= ballot["proposition"]
+    .uncorrelated
+      .uparrow.left-side
+      Secret Ballots: These lists aren't in corresponding order!
+      .uparrow.right-side
+    %aside
+      An election returns website could look slicker than this! But
+      this illustrates the core idea.
+      .downarrow.rightside
+

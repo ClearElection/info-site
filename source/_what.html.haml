@@ -3,51 +3,10 @@
   %h1 In a Clear Election, the returns data are freely available on the web.
 
   %article
-
-    .returns
-      .contents
-        .caption Sample Election Returns
-        %a.download
-          %i.fa.fa-download
-          Download 
-        .tables
-          .returns-table.voter-roll
-            %table
-              %caption= "#{data.names.length} voters participated"
-              %thead
-                %tr
-                  %th.number{scope:"column"} #
-                  %th{scope:"column"} Voter
-              %tbody
-                - data.names.each_with_index do |name, i|
-                  %tr
-                    %td.number= i+1
-                    %td= name
-          .returns-table.ballots
-            %table
-              %caption= "#{data.ballots.length} ballots cast"
-              %thead
-                %tr
-                  %th.number{scope:"column"} #
-                  %th.ballot-id{scope:"column"} Ballot ID
-                  %th.candidate{scope:"column"} President
-                  %th.proposition{scope:"column"} Prop. A
-              %tbody
-                - data.ballots.each_with_index do |ballot, i|
-                  %tr
-                    %td.number= i+1
-                    %td.ballot-id= ballot["ballot_id"]
-                    %td.candidate= ballot["candidate"]
-                    %td.proposition= ballot["proposition"]
-        .uncorrelated
-          .uparrow.left-side
-          Secret Ballots: These tables aren't in the same order!
-          .uparrow.right-side
-
+    = partial 'sample_returns'
     .p
       You may know this famous quote, apocryphally attributed to Joseph Stalin:
-      .quote
-        "Those who vote decide nothing.  Those who count the vote decide everything."
+      .quote "Those who vote decide nothing.  Those who count the vote decide everything."
       In a Clear Election, anyone and everyone can count the votes, and confirm the results.
 
 %section
@@ -55,16 +14,11 @@
   %h1 In a Clear Election, you confirm that your ballot was counted.
 
   %article
-
+    = partial 'sample_ballot'
     .p
-      In a typical election today, you cast your ballot and then... somebody tells you who won.  But how can you be sure your vote was really counted?
-
-    .p
-      In a Clear Election, every ballot has a "Ballot ID".  When you fill out your ballot, you get to keep a copy of your ballot ID.  Only you know your ballot ID.  Keep it confidential.
-
-    .TODO sample ballot goes here
-
-    .TODO Include ballot personalization/uniquification if that can be clear.
+      In a typical election today, you cast your ballot and then trust that your vote will be counted. 
+      .quote But how can you be sure your vote was really counted?
+      In a Clear Election, you can easily check the returns data to make sure that your ballot is included.
 
 %section
 

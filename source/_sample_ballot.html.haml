@@ -1,0 +1,55 @@
+.sample.ballot
+  .caption Sample Ballot
+  .contents
+    - ballot = data.sample_ballot
+    %section.id
+      %table
+        %tr
+          %th Ballot ID
+          %th
+          %th Choose any ID ending
+        %tr
+          %td.id= ballot["ballot_id"]
+          %td.id.separator &bullet;
+          %td.id
+            %span
+              %table.uniquifiers
+                %tr
+                  - ballot["uniquifiers"].each do |uniquifier|
+                    %td.uniquifier= uniquifier
+                %tr
+                  - ballot["uniquifiers"].each do |uniquifier|
+                    %td
+                      .checkbox{class: uniquifier == ballot["uniquifier"] && :checked}
+    .contests
+      .contest.candidate
+        %table
+          %thead
+            %tr
+              %th(colspan=2) Candidate: Choose One
+          %tbody
+            - data.candidates.each do |candidate|
+              %tr
+                %td= candidate
+                %td
+                  .checkbox{class: candidate == ballot["candidate"] && :checked}
+      .contest.prop
+        %table
+          %thead
+            %tr
+              %th(colspan=2) Proposition: Choose One
+          %tbody
+            - ["YES", "NO"].shuffle.each do |choice|
+              %tr
+                %td= choice
+                %td
+                  .checkbox{class: choice == ballot["proposition"] && :checked}
+    %aside.ballotid
+      When you vote, remember your Ballot ID.  Only you know it.  Keep it
+      confidential!
+      .downarrow.rightside
+    %aside.uniquifier
+      Just to be sure nobody else has the same Ballot ID as you.
+      .downarrow.leftside
+    .comment
+      A real voting app could look slicker than this!

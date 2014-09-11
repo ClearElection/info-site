@@ -1,0 +1,109 @@
+@import 'compass/css3';
+
+$comment_color: rgba(0,128,0,0.85);
+$up_arrow_size: 16px;
+
+.sample.ballot {
+  color: black;
+  text-align: center;
+  .checkbox {
+    height:18px;
+    width:18px;
+    border: 1px solid black;
+    &.checked {
+      background:url("/images/checkmark-blue.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+  section.id {
+    margin-top: 10px;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    table {
+      border: none;
+    }
+    tr {
+      background: white;
+    }
+    th {
+      text-align: center;
+      padding: 0;
+    }
+    td.id {
+      text-align: center;
+      font-family: monospace, monospace;
+      white-space: nowrap;
+      padding: 0;
+      &.separator {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+      vertical-align: top;
+    }
+    table.uniquifiers {
+      td {
+        padding: 2px;
+        padding-top: 0;
+        text-align: center;
+        vertical-align: middle;
+      }
+    }
+  }
+  .contest {
+    display: inline-block;
+    vertical-align: top;
+  }
+  aside, .comment {
+    display: block;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-style: italic;
+    font-size: smaller;
+    position: absolute;
+    color: $comment_color;
+    @include text-shadow(0 2px 2px #ffffff);
+  }
+  aside {
+    .downarrow {
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      margin-top: -$up_arrow_size/2;
+      background: url("/images/green-arrow-down-right.png");
+      background-size: $up_arrow_size $up_arrow_size;
+      width: $up_arrow_size;
+      height: $up_arrow_size;
+      &.rightside {
+        @include rotate(-15deg);
+        right: -$up_arrow_size/2;
+      }
+      &.leftside {
+        @include transform(scaleX(-1) rotate(-25deg));
+        left: -$up_arrow_size/2;
+      }
+    }
+    &.ballotid {
+      width: 280px;
+      left: -210px;
+      top: 38px;
+      @include rotate(-7deg);
+    }
+    &.uniquifier {
+      width: 220px;
+      right: -132px;
+      top: 64px;
+      @include rotate(14deg);
+    }
+  }
+  .comment {
+    @include rotate(-14deg);
+    bottom: -8px;
+    right: -8px;
+    width: 140px;
+    @include border-radius(50%);
+    background: rgba(255,255,255,0.8);
+    padding: 8px;
+    border: 2px solid $comment_color;
+  }
+}

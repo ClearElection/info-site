@@ -1,7 +1,5 @@
 @import 'compass/css3';
 
-$up-arrow-size: 16px;
-
 #what {
   .quote {
     display: inline;
@@ -18,11 +16,7 @@ $up-arrow-size: 16px;
     font-size: 1.5rem;
   }
 
-  aside {
-    display: none;
-  }
-
-  .returns {
+  .sample {
     width: 100%;
     text-align: center;
     margin-bottom: 30px;
@@ -40,80 +34,6 @@ $up-arrow-size: 16px;
       color: black;
       margin-bottom: 8px;
     }
-    .uncorrelated {
-      position: absolute;
-      white-space: nowrap;
-      left: 160px;
-      bottom: 0px;
-      font-family: "Comic Sans MS", cursive, sans-serif;
-      font-style: italic;
-      color: rgba(0,128,0,0.85);
-      .uparrow {
-        display: inline-block;
-        background: url("/images/green-arrow-down-right.png");
-        background-size: $up-arrow-size $up-arrow-size;
-        width: $up-arrow-size;
-        height: $up-arrow-size;
-        @include scaleY(-1);
-        &.left-side {
-          @include scale(-1, -1);
-        }
-
-      }
-    }
-    .download {
-      font-weight: normal;
-      color: darkblue;
-      font-style: italic;
-      float: right;
-      position: absolute;
-      top: 4px;
-      right: 8px;
-    }
-    .tables: {
-      white-space: nobreak;
-    }
   }
-  .returns-table {
-    display: inline-block;
-    margin:8px;
-    &.voter-roll {
-      width: 300px;
-    }
-    &.ballots {
-      width: 400px;
-    }
-    table {
-      margin: 0;
-      display: table;
-      width: 100%;
-      line-height: 1;
-      caption {
-        margin-bottom: 4px;
-      }
-      thead, tbody {
-        float: left;
-        width: 100%;
-      }
-      tbody {
-        overflow: auto;
-        height: 200px;
-      }
-      tr {
-        width: 100%;
-        display: table;
-        text-align: left;
-      }
-      th,td {
-        &.number { width: 40px; }
-        &.ballot-id { width: 110px; max-width: 150px;}
-        &.proposition { width: 80px; }
-      }
-      td.ballot-id {
-        font-family: monospace, monospace;
-      }
 
-
-    }
-  }
 }
