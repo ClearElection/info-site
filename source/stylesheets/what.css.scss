@@ -1,12 +1,14 @@
 @import 'compass/css3';
+$comment_color: rgba(0,128,0,0.85);
+$arrow_size: 16px;
 
 #what {
   .quote {
     display: inline;
     color: crimson;
     font-style: italic;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
   }
 
   .point {
@@ -33,6 +35,22 @@
       font-weight: bold;
       color: black;
       margin-bottom: 8px;
+    }
+
+    .comment {
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        font-style: italic;
+        font-size: smaller;
+        color: $comment_color;
+        @include text-shadow(0 2px 2px #ffffff);
+        position: absolute;
+        .arrow {
+            background: url("/images/green-arrow-down-right.png");
+            background-size: $arrow_size $arrow_size;
+            width: $arrow_size;
+            height: $arrow_size;
+            position: absolute;
+        }
     }
   }
 

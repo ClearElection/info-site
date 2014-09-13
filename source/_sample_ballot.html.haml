@@ -44,12 +44,13 @@
                 %td= choice
                 %td
                   .checkbox{class: choice == ballot["proposition"] && :checked}
-    %aside.ballotid
+    .comment.ballotid
       When you vote, remember your Ballot ID.  Only you know it.  Keep it
       confidential!
-      .downarrow.rightside
-    %aside.uniquifier
+      .arrow.down.right-side
+    .comment.uniquifier
+      .arrow.down.left-side
       Just to be sure nobody else has the same Ballot ID as you.
-      .downarrow.leftside
-    .comment
-      A real voting app could look slicker than this!
+    .comment.slicker
+      .arrow.up.left-side
+      A real ballot or voting app could look slicker than this!

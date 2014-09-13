@@ -30,15 +30,17 @@
             - data.ballots.each_with_index do |ballot, i|
               %tr
                 %td.number= "#{i+1}."
-                %td.ballot-id= ballot["ballot_id"]+"&bullet;"+ballot["uniquifier"]
+                %td.ballot-id= ballot["ballot_id"]+ballot["uniquifier"]
                 %td.candidate= ballot["candidate"]
                 %td.proposition= ballot["proposition"]
-    .uncorrelated
-      .uparrow.left-side
+    .comment.uncorrelated
+      .arrow.up.left-side
       Secret Ballots: These lists aren't in corresponding order!
-      .uparrow.right-side
-    %aside
-      An election returns website could look slicker than this! But
-      this illustrates the core idea.
-      .downarrow.rightside
-
+      .arrow.up.right-side
+    .comment.download
+      .arrow.down.left-side
+      Download the data to analyze it with your own tools.
+    .comment.slicker
+      An election returns website could look slicker than this!
+      But this illustrates the core idea.
+      .arrow.down
