@@ -1,42 +1,38 @@
-ClearElection.header = ->
-    $sections = $("#MainContents > section")
-    $buttons = $("#HeaderTopBar .button")
-    $downarrows = $(".tab-down-arrow")
+class ClearElection.Header
+    constructor: () ->
+        @$header = $("#Header")
+        @$panels = $("#MainContents > section")
+        @$buttons = $("#HeaderTopBar .button")
+        @$downarrows = $(".tab-down-arrow")
+        @$logo = $(".logo")
 
-    $buttons.first().addClass("active")
-    $sections.hide()
-    $sections.first().show()
+        @$buttons.first().addClass("active")
+        @$panels.hide()
+        @activateTab @$buttons.first().attr("href")
 
-    activate = ($button) ->
-        hashid = $button.attr("href")
-        $sections.hide()
-        $buttons.removeClass("active")
+        @$buttons.on "click", (e) =>
+            @selectTab $(e.target).attr('href')
+            return false
+
+        @$logo.on "click", =>
+            $("html, body").animate
+                scrollTop: 0
+            ,
+                300
+            window.location.hash = ""
+
+    activateTab: (tabId) ->
+        $button = @$buttons.filter("[href='#{tabId}']")
+        @$panels.hide()
+        @$buttons.removeClass("active")
         $button.addClass("active")
-        $button.append $downarrows
-        $section = $(hashid)
-        $section.show()
-        return hashid
+        $button.append @$downarrows
+        @$panel = $(tabId)
+        @$panel.show()
 
-    select = ($button) ->
-        hashid = activate $button
+    selectTab: (tab) ->
+        @activateTab(tab)
+        hashid = tab
         history.replaceState(null, null, hashid)
-        $("html, body").animate
-            scrollTop: $('#Header').height()+2
-        ,
-            500
-        return false
-
-    $preselect = $buttons.filter("[href='#{window.location.hash}']")
-    if $preselect.length == 0
-        activate $buttons.first()
-    else
-        select $preselect
-
-    $buttons.on "click", -> select $(@)
-
-    $(".logo").on "click", ->
-        $("html, body").animate
-            scrollTop: 0
-        ,
-            300
-        window.location.hash = ""
+        scrollTo = @$header.height()+2
+        $("html, body").animate { scrollTop: scrollTo }, 500
