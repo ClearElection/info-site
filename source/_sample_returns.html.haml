@@ -7,7 +7,7 @@
     .tables
       .returns-table.voter-roll
         %table
-          %caption= "#{data.names.length} voters participated"
+          %caption= "Turnout: #{data.names.length} voters"
           %thead
             %tr
               %th.number{scope:"column"} #
@@ -19,7 +19,7 @@
                 %td= name
       .returns-table.ballots
         %table
-          %caption= "#{data.ballots.length} ballots cast"
+          %caption= "Cast: #{data.ballots.length} ballots"
           %thead
             %tr
               %th.number{scope:"column"} #
