@@ -14,12 +14,12 @@ $arrow_size: 16px;
   }
   .comment {
       &.slicker {
-          width: 280px;
-          left: -294px;
+          width: 300px;
+          left: -320px;
           top: 0;
           @include rotate(-7deg);
           .arrow {
-              right: -$arrow_size/2;
+              right: -$arrow_size;
               top: 50%;
               margin-top: -$arrow_size/2;
               @include rotate(-45deg);
