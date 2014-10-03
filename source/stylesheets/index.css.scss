@@ -1,60 +1,102 @@
 @import 'compass/css3';
 
 #MainContents {
-  width: 100%;
-  text-align: center;
-  color: darkblue;
-  background: white;
-  padding-top: 20px;
+    width: 100%;
+    text-align: center;
+    color: darkblue;
+    background: white;
+    padding-top: 20px;
 
-  > section {
+    > section {
 
-    h1 {
-      padding-top: 20px;
-      font-size: 30px;
+        section {
+            background-color: white;
+            & ~ section {
+                border-top: 4px solid rgb(75,138,235);
+            }
+        }
 
-      .question, .answer {
-        display: inline;
-      }
-      .question{
-        color: darkblue;
-      }
-      .answer {
-        color: green;
-        font-style: italic;
-      }
+        h1 {
+            padding-top: 20px;
+            font-size: 30px;
+
+            .question, .answer {
+                display: inline;
+            }
+            .question{
+                color: darkblue;
+            }
+            .answer {
+                color: green;
+                font-style: italic;
+            }
+
+        }
+
+        article{
+            width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 20px;
+            padding-bottom: 40px;
+            line-height: 1.5;
+            text-align: justify;
+
+            .p ~ .p {
+                margin-top: 1rem;
+            }
+        }
+
+
+        .TODO {
+            color: grey;
+            font-style: italic;
+            &:before {
+                content: "TODO -- ";
+            }
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .quote,.concern {
+            display: inline;
+            color: crimson;
+            font-style: italic;
+            margin-left: 0.25em;
+            margin-right: 0.25em;
+        }
+
+        .em {
+            display: inline;
+            font-style: italic;
+        }
+
+        .point {
+            display: inline;
+            color: green;
+            margin-right: 0.25em;
+        }
+
+        .subpoints {
+            display: table-row;
+            width: 100%;
+            .subpoint {
+                display: table-cell;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-right: 20px;
+                padding-left: 20px;
+                width: 50%;
+                .concern {
+                    margin-left: 0;
+                }
+            }
+            &:first-child .subpoint { padding-top: 0 }
+        }
+        .subpoints + .p {
+            margin-top: 20px;
+        }
+
 
     }
-
-    article{
-      width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-top: 20px;
-      padding-bottom: 40px;
-      line-height: 1.5;
-      text-align: justify;
-
-      .p ~ .p {
-        margin-top: 1rem;
-      }
-    }
-
-    section ~ section {
-      border-top: 4px solid rgb(75,138,235);
-    }
-
-    .TODO {
-      color: grey;
-      font-style: italic;
-      &:before {
-        content: "TODO -- ";
-      }
-      margin-top: 20px;
-      margin-bottom: 20px;
-    }
-
-
-
-  }
 }

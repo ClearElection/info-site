@@ -18,3 +18,18 @@ body {
     height: 30px;
 }
 
+.clear-election {
+    display: inline;
+    font-family: serif, serif;
+}
+
+.clearelection-org {
+    display: inline;
+    font-family: monospace, monospace;
+}
+
+.contact-us {
+    display: inline;
+    %a { display: inline; }
+    text-decoration: underline;
+}

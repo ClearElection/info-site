@@ -3,25 +3,6 @@ $comment_color: rgba(0,128,0,0.85);
 $arrow_size: 16px;
 
 #what {
-  .quote,.concern {
-    display: inline;
-    color: crimson;
-    font-style: italic;
-    margin-left: 0.25em;
-    margin-right: 0.25em;
-  }
-
-  .em {
-      display: inline;
-      font-style: italic;
-    }
-
-  .point {
-    margin: 8px;
-    text-align: center;
-    color: green;
-    font-size: 1.5rem;
-  }
 
   .sample {
     width: 100%;
@@ -58,25 +39,4 @@ $arrow_size: 16px;
         }
     }
   }
-
-  .subpoints {
-      display: table-row;
-      width: 100%;
-      .subpoint {
-          display: table-cell;
-          padding-top: 10px;
-          padding-bottom: 10px;
-          padding-right: 20px;
-          padding-left: 20px;
-          width: 50%;
-          .concern {
-              margin-left: 0;
-          }
-      }
-      &:first-child .subpoint { padding-top: 0 }
-  }
-  .subpoints + .p {
-      margin-top: 20px;
-  }
-
 }
