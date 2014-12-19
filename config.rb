@@ -105,3 +105,16 @@ configure :build do
   # Or use a different image path
   # set :http_path, "/Content/images/"
 end
+
+# hack because of incompatibility between colorize gem and padrino's
+# colorizer.  s3_sync uses light_green.  I suspect it used to expect
+# colorize gem, but padrino's colorizer (which doesn't support light_green)
+# seems to be in effect with the current versions of gems.  Get rid of this
+# later, hopefully.
+class String::Colorizer
+  def self.light_green(target, mode_name=:default)
+    value = 62
+    mode = modes[mode_name] || modes[:default]
+    "\e[#{mode};#{value}m" << target << "\e[0m"
+  end
+end
