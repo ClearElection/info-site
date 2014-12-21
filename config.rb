@@ -69,8 +69,8 @@ end
 
 activate :s3_sync do |s3_sync|
   keys = YAML.load_file("keys/aws.yml").deep_symbolize_keys
-  s3_sync.bucket                 = keys[:bucket]
-  s3_sync.region                 = keys[:region]
+  s3_sync.bucket                 = 'info.clearelection.org'
+  s3_sync.region                 = 'us-east-1'
   s3_sync.aws_access_key_id      = keys[:aws_access_key_id]
   s3_sync.aws_secret_access_key  = keys[:aws_secret_access_key]
 end
