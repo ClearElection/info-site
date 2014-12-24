@@ -1,0 +1,44 @@
+.codeview {
+    text-align: left;
+    display: inline;
+    .clickon { display: inline-block; }
+    .view { color: green }
+}
+
+.codeview-modal {
+    padding-top: 4px;
+    padding-bottom: 0;
+    padding-right: 0;
+    padding-left: 0;
+    .topbar {
+        padding: 6px;
+        border-bottom: 2px solid lightgrey;
+
+        .close-reveal-modal {
+            position: static;
+            float: right;
+            margin-right: 4px;
+            font-size: inherit;
+            font-weight: normal;
+        }
+        .url {
+            color: darkblue;
+        }
+    }
+
+    .code {
+        display: inline-block;
+        text-align: left;
+        width: 100%;
+        height: 500px;
+        padding: 0;
+        .CodeMirror {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.reveal-modal-bg {
+    position: fixed;
+}

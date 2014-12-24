@@ -7,4 +7,31 @@
         width: 150px;
         z-index: 100;
     }
+
+    dl, ul {
+        padding-left: 20px;
+        dt {
+            &:after {
+                content: ':'
+            }
+            float: left;
+            width: 6em;
+            clear: both;
+        }
+        dd {
+            margin-left: 6em;
+        }
+    }
+
+    .prop {
+        font-family: monospace;
+        font-size: larger;
+        color: grey;
+    }
+
+
+    .sdk a {
+        font-family: monospace;
+    }
+
 }

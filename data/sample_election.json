@@ -1,0 +1,56 @@
+{
+  "version": "0.0",
+  "name": "Election Name-3",
+  "agents": {
+    "signin": {
+      "uri": "http://agents.example.com/signin-3/"
+    },
+    "booth": {
+      "uri": "http://agents.example.com/booth-3/"
+    }
+  },
+  "schedule": {
+    "pollsOpen": "2014-11-23T15:56:19+00:00",
+    "pollsClose": "2015-01-22T15:56:19+00:00"
+  },
+  "contests": [
+    {
+      "contestId": "contestId-6",
+      "name": "Contest Name-6",
+      "ranked": true,
+      "multiplicity": 3,
+      "writeIn": true,
+      "candidates": [
+        {
+          "candidateId": "candidateId-15",
+          "name": "Candidate Name-15"
+        },
+        {
+          "candidateId": "candidateId-16",
+          "name": "Candidate Name-16"
+        },
+        {
+          "candidateId": "candidateId-17",
+          "name": "Candidate Name-17"
+        }
+      ]
+    },
+    {
+      "contestId": "contestId-7",
+      "name": "Contest Name-7",
+      "ranked": false,
+      "multiplicity": 1,
+      "writeIn": false,
+      "candidates": [
+        {
+          "candidateId": "candidateId-18",
+          "name": "Candidate Name-18"
+        },
+        {
+          "candidateId": "candidateId-19",
+          "name": "Candidate Name-19"
+        }
+      ]
+    }
+  ]
+}

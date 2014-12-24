@@ -5,3 +5,4 @@ $(document).ready ->
     tab = window.location.hash
     header.selectTab tab if tab != ""
     ClearElection.what()
+    ClearElection.technical()

@@ -2,32 +2,102 @@
 
 %section
 
-  %h1 Election definition
+  %h1 Election description
 
-  .TODO Standardize the contents of an election so that tools can examine it.   [JSON schema]
-  
-  .TODO Includes contest definitions, polling times, and (after polling closes) returns data
+  %article
 
-  .TODO For online elections, also includes information about the agents that handle the election (see below)
+    .p
+      An election is defined by a JSON file at some URI.  For example, see
+      =succeed '.' do
+        =partial 'codeview', locals: {modal_id: 'SimpleElectionModal', url: 'http://examples.clearelection.org/election-simple.json', contents: data.sample_election}
+      .TODO.inline more interesting example; put the link online
+      An election definition includes, minimally:
+    .p
+      %dl
+        %dt.prop schedule
+        %dd
+          The date &amp; time at which polls open, i.e. voting begins, and the 
+          The date &amp; time at which polls close, i.e. voting ends.
+        %dt.prop contests
+        %dd The list of contests, each including the list of candidates and attributes about how to vote
 
-  .TODO Does not (currently) have any info about the look &amp; feel.
+        %dt.prop returns
+        %dd (After the polls have closed) The returns data: voters and ballots.
 
-  .TODO We provide SDKs for convenient access and management.  (Currently only ruby)
+        %dt.prop agents
+        %dd (For an online election) The URIs for the signin and booth agents. See discussion below.
+
+    .p(style='text-align:left;')
+      The syntax is specified by the JSON schema at
+      =partial 'codeview', locals: {modal_id: 'ElectionSchemaModal', url: 'http://schemas.clearelection.org/election-0.0.schema.json', contents: data.election_schema}
+      .TODO.inline put the link online
+
+    .p
+      The election data is (mostly) static.  When an election is first
+      posted to its URI, it should include all data (except the
+      %span.prop returns
+      data if the voting hasn't happened yet), and that data should never change.
+      Once the polls close, the complete
+      %span.prop returns
+      data will be added as a single atomic change.  After that the
+      election data should remain unchanged in perpetuity.
+
+
+    .p 
+      The election data is intended to be as simple and straightforward
+      as possible.  Accordingly, the schema does not address the "look &amp;
+      feel" of the election, i.e., no fonts or images or other styling info.
+      Styling could be an ehnanced feature offered by third-party election
+      tools.
+
+    .p
+      Notice that the election data includes the returns but not the
+      results, i.e., does not include the final determination of which
+      candidate was considered to be the winner.  Determining the winner is
+      an interpetation of the results, and can depend on external factors
+      such as threshold of participating voters, whether there were any
+      challenges to the election, and so forth -- and so is beyond the
+      scope of ClearElection data.  That said, in the future the schema may
+      be updated to allow a
+      %span.prop results
+      section in which the final determinations can be added to the file,
+      just to keep that information available in perpetuity along the
+      returns data.
+
+    .p 
+      We provide SDKs for convenient access and management:
+
+      %ul.sdk
+        %li
+          %a(href="http://rubygems.org/gems/clear-election-sdk") clear-election-sdk
+          ruby gem
+        %li
+          .TODO.inline JavaScript SDK including tallying
      
 
 %section
 
-  %h1 Online Elections
+  %article
 
-  .TODO Agents &amp; Protocols
+    %h1 Online Elections
 
-  .TODO Discussion of voter authentication
+    .TODO Agents &amp; Protocols
+
+    .TODO Discussion of voter authentication
 
 
 %section
 
-  %h1 Open Source
+  %article
 
-  .TODO Discussion of open source philosophy.  Free/freemium for hosted service
+    %h1 Notes on Open Source
 
-  .TODO Call for contributors
+    .TODO Open source isn't necessary, since the results speak for themselves.
+
+    .TODO But still doing this as an open source project for all the good reasons.
+
+    .TODO Call for contributors
+
+    .TODO Might develop Free/freemium for hosted service, which might have
+    non-open source for freemium features.
+

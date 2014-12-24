@@ -1,0 +1,18 @@
+// locals:
+//      modal_id
+//      url
+//      contents
+//
+.codeview
+  %a.view(href="#" data-reveal-id=modal_id)
+    .clickon
+      %i.fa.fa-eye
+      = url
+  %div.codeview-modal.reveal-modal(id=modal_id data-reveal)
+    .topbar
+      %a.url(href=url)= url
+      %a.close-reveal-modal
+        %i.fa.fa-close
+    .code
+      %textarea= JSON.pretty_generate contents
+
