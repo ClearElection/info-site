@@ -10,7 +10,6 @@
       An election is defined by a JSON file at some URI.  For example, see
       =succeed '.' do
         =partial 'codeview', locals: {modal_id: 'SimpleElectionModal', url: 'http://examples.clearelection.org/election-simple.json', contents: data.sample_election}
-      .TODO.inline more interesting example; put the link online
       An election definition includes, minimally:
     .p
       %dl
@@ -30,7 +29,6 @@
     .p(style='text-align:left;')
       The syntax is specified by the JSON schema at
       =partial 'codeview', locals: {modal_id: 'ElectionSchemaModal', url: 'http://schemas.clearelection.org/election-0.0.schema.json', contents: ClearElection::Schema.election(version: "0.0")}
-      .TODO.inline put the link online
 
     .p
       The election data is (mostly) static.  When an election is first
@@ -98,6 +96,5 @@
 
     .TODO Call for contributors
 
-    .TODO Might develop Free/freemium for hosted service, which might have
-    non-open source for freemium features.
+    .TODO Might develop freemium for hosted service, which might have non-open source for freemium features.
 
