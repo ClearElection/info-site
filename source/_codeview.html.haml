@@ -10,7 +10,9 @@
       = url
   %div.codeview-modal.reveal-modal(id=modal_id data-reveal)
     .topbar
-      %a.url(href=url)= url
+      %a.url(href=url)
+        = url
+        %i.fa.fa-external-link
       %a.close-reveal-modal
         %i.fa.fa-close
     .code
