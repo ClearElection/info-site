@@ -31,13 +31,14 @@
       =partial 'codeview', locals: {modal_id: 'ElectionSchemaModal', url: 'http://schemas.clearelection.org/election-0.0.schema.json', contents: ClearElection::Schema.election(version: "0.0")}
 
     .p
-      The election data is (mostly) static.  When an election is first
-      posted to its URI, it should include all data (except the
+      The election data is (mostly) static.  When the election's manager
+      first posts the election to its URI, it should include all data
+      (except the
       %span.prop returns
       data if the voting hasn't happened yet), and that data should never change.
-      Once the polls close, the complete
+      Once the polls close, the manager should add the complete
       %span.prop returns
-      data will be added as a single atomic change.  After that the
+      data as a single atomic change.  After that the
       election data should remain unchanged in perpetuity.
 
 
