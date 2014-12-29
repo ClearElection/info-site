@@ -28,7 +28,12 @@
 
     .p(style='text-align:left;')
       The syntax is specified by the JSON schema at
-      =partial 'codeview', locals: {modal_id: 'ElectionSchemaModal', url: 'http://schemas.clearelection.org/election-0.0.schema.json', contents: ClearElection::Schema.election(version: "0.0")}
+      =succeed "." do
+        =partial 'codeview', locals: {modal_id: 'ElectionSchemaModal', url: 'http://schemas.clearelection.org/election-0.0.schema.json', contents: ClearElection::Schema.election(version: "0.0")}
+      For detailed documentation, see
+      %a(href="http://docs.clearelection.org")
+        %span.url docs.clearelection.org
+        %i.fa.fa-external-link
 
     .p
       The election data is (mostly) static.  When the election's manager
