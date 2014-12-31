@@ -106,6 +106,22 @@
         %li You fill in your ballot, then cast it in the ballot box.
       When polls close, the Election Manager gathers the list of signed-in voters from the Signin Agent and gathers the collection of ballots from the Ballot Agent.
 
+    .TODO
+      Note that the manager isn't involved in the voting.  Note that the Signin Agent never sees your ballot, and the Booth Agent doesn't know who you are. 
+      
+    .TODO
+      The manager gets to choose who the agents are: the election definition includes the URIs for the agents; voting client and the agents themselves look at the election definition to know who their counterparts are.
+
+
+    .TODO
+      Note that that by virtue of having well-defined protocols, these can really be indepdendent components.  Though a given agent might or might not be willing to work on a given election; that's up to the agent (this allows paid services).
+
+    .TODO
+      For more details, see
+      %a(href="http://docs.clearelection.org")
+        %span.url docs.clearelection.org
+        %i.fa.fa-external-link
+
 
 %section
 
@@ -131,3 +147,7 @@
             
     .p
       We welcome comments, suggestions, and contributions!
+
+
+    .TODO Comment on code &amp; protocol quality:  We start from a base that by virtue of the ClearElection open data approach, it's impossible to get false results.  So in some sense it doesn't make any difference how good or bad the code and protocols are.
+    .TODO That said, the worse the code &amp; protocols are, the more likely it may be that an election could be disrupted through data loss or adversarial attacks.  Or that anonymity could be compromised through some sort of attack.  So of course we want the code to be as robust as possible to minimize those.  We're deliberatly starting with a simple protocol to make it easy to demonstrate the whole process.  But if/when this catches on we're happy to release improved protocol versions with higher reliability or security.
