@@ -9,4 +9,4 @@ Important commands:
 * `bundle update`
 * `bower update`
 * `middleman server` - test on `http://localhost:4567`
-* `middleman build && middleman s3_sync` - push to live site.  Requires a local file `keys/aws.yml` (.gitignore'd) with the appropriate AWS bucket and authorization data.
+* `rake release` - push to live site.  Requires a local file `keys/aws.yml` (.gitignore'd) with the appropriate AWS authorization data.
