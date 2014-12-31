@@ -12,18 +12,18 @@
         =partial 'codeview', locals: {modal_id: 'SimpleElectionModal', url: 'http://info.clearelection.org/examples/election0.json', contents: data.sample_election}
       An election definition includes, minimally:
     .p
-      %dl
-        %dt.prop schedule
+      %dl.properties
+        %dt schedule
         %dd
           The date &amp; time at which polls open, i.e. voting begins, and the 
           The date &amp; time at which polls close, i.e. voting ends.
-        %dt.prop contests
+        %dt contests
         %dd The list of contests, each including the list of candidates and attributes about how to vote
 
-        %dt.prop returns
+        %dt returns
         %dd (After the polls have closed) The returns data: voters and ballots.
 
-        %dt.prop agents
+        %dt agents
         %dd (For an online election) The URIs for the signin and booth agents. See discussion below.
 
     .p(style='text-align:left;')
@@ -69,26 +69,65 @@
 
 %section
 
+  %h1 Online Elections
+
   %article
 
-    %h1 Online Elections
+    .p
+      Online elections have four indepdendent components:
 
-    .TODO Agents &amp; Protocols
+    .p
+      %dl.components
+        %dt Election Manager
+        %dd.TODO Responsible for creating/updating the election URI.
 
-    .TODO Discussion of voter authentication
+        %dt Signin Agent
+        %dd.TODO Responsible for authenticating/authorizing voters
+
+        %dt Booth Agent
+        %dd.TODO Responsible for gathering filled ballots anonymously.
+
+        %dt Voting Client
+        %dd.TODO Presents a UI to the voters, taking them from the Signin Agent (to sign in) to the Booth agent (to fill out and cast their ballots)
+
+    .p
+
+      The model for online voting is analogous to how a real-live polling place might work:
+
+    .p
+
+      %ol
+        %li You go to the signin desk, identify yourself to the agent there.
+        %li The Signin Agent checks you against the voter roll, and notes down that you signed in.
+        %li The Signin Agent gives you a ticket and says "take this over to the voting booth and give it to the agent there".
+        %li You go the voting booth, and give your ticket to the agent.
+        %li The Booth Agent checks that your ticket is legit.
+        %li The Booth Agent hands you a ballot.
+        %li You fill in your ballot, then cast it in the ballot box.
+      When polls close, the Election Manager gathers the list of signed-in voters from the Signin Agent and gathers the collection of ballots from the Ballot Agent.
 
 
 %section
 
+  %h1 Open Source
+
   %article
 
-    %h1 Notes on Open Source
+    .p 
+      ClearElection is an open source project.  All sources, schema
+      definitions, protocols, documents, etc. are mastered online:
 
-    .TODO Open source isn't necessary, since the results speak for themselves.
+      .callout
+        %a.url(href="https://github.com/clearelection")
+          https://github.com/clearelection
+          %i.fa.fa-external-link
 
-    .TODO But still doing this as an open source project for all the good reasons.
+      The overall development roadmap is at:
 
-    .TODO Call for contributors
-
-    .TODO Might develop freemium for hosted service, which might have non-open source for freemium features.
-
+      .callout
+        %a.url(href="https://github.com/clearelection/roadmap")
+          https://github.com/clearelection/roadmap
+          %i.fa.fa-external-link  
+            
+    .p
+      We welcome comments, suggestions, and contributions!

@@ -15,20 +15,30 @@
                 content: ':'
             }
             float: left;
-            width: 6em;
             clear: both;
         }
-        dd {
-            margin-left: 6em;
+
+        &.properties {
+            dt {
+                width: 6em;
+                font-family: monospace;
+                font-size: larger;
+                color: grey;
+            }
+            dd {
+                margin-left: 6em;
+            }
+        }
+        &.components {
+            dt {
+                width: 10em;
+                font-weight: bold;
+            }
+            dd {
+                margin-left: 10em;
+            }
         }
     }
-
-    .prop {
-        font-family: monospace;
-        font-size: larger;
-        color: grey;
-    }
-
 
     .sdk a, .url {
         font-family: monospace;
@@ -37,5 +47,14 @@
             font-size: smaller;
         }
     }
+
+    ol {
+        padding-left: 20px;
+    }
+
+    .callout {
+        text-align: center;
+    }
+
 
 }
