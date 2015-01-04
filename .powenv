@@ -1,0 +1,4 @@
+# Load chruby
+source /usr/local/share/chruby/chruby.sh
+# Tell chruby to switch to the version specified
+chruby $(cat .ruby-version)
