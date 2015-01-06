@@ -3,9 +3,13 @@
 @import 'foundation';
 @import 'codemirror';
 
+html {
+  font-size: 16px;
+}
 // foundation overrides
 body {
   line-height: normal;
+  font-size: 1.125rem;
 }
 a {
   color: inherit;
